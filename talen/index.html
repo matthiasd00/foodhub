@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ned">
+    <head>
+        <meta charset="UTF-8"> 
+        <title>FoodHub</title>
+    </head>
+
+
+    <body>
+        <a href="#ned" data-reload>Nederlands</a>
+        <a href="#eng" data-reload>Engels</a>
+
+        <p id="hallo">
+            Welkom iedereen!
+        </p>
+        <p id="eten">
+            Wat zou je willen klaarmaken?
+        </p>
+
+        <script>
+            //define language reload anchors
+            var dataReload = document.querySelectorAll("[data-reload]");
+
+
+            //language translations
+
+            var language = {
+                ned: {
+                    welkom:"Welkom iedereen!"
+                },
+                eng: {
+                    welkom:"Welcome everyone!",
+                    voeding:"What would you like to prepare?"
+                    
+                }
+            };
+            //define language via window hash
+            if (window.location.hash) {
+                if (window.location.hash === "#eng") {
+                    hallo.textContent = language.eng.welkom;
+                    eten.textContent = language.eng.voeding;
+                }
+            }
+
+            //define language reload onclick illiteration
+            for (i = 0; i <= dataReload.length; i++); {
+                dataReload[i].onclick = function() {
+                    location.reload(true);
+                };
+            }
+        </script>
+
+
+
+    </body>
+
+
+
+
+</html>
